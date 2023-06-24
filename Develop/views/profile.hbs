@@ -1,0 +1,25 @@
+
+
+<section>
+
+  <h1>Welcome! {{user.name}}</h1>
+
+  {{#each user.projects as |project|}}
+    {{>project_card 
+        name=project.name
+        id=project.id
+        description=project.description
+        needed_funding=project.needed_funding
+        user=project.user.name
+    }}
+
+    <form action="/profile/projects/{{project.id}}/delete" method="post">
+    
+      <button type="submit">Delete</button>
+    
+    </form>
+  {{/each}}
+  
+
+
+</section>

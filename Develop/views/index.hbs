@@ -1,0 +1,20 @@
+
+
+<section>
+
+  
+
+  {{#each projects as |project|}}
+    {{>project_card 
+        name=project.name
+        id=project.id
+        description=project.description
+        needed_funding=project.needed_funding
+        user=project.user.name
+    }}
+
+  {{/each}}
+  
+
+
+</section>
