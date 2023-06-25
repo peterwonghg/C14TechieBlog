@@ -1,21 +1,21 @@
 const authenticate = require('../../middleware/authenticate');
-const { Project, User } = require('../../models');
+const { blog, User } = require('../../models');
 
 const router = require('express').Router();
 
 
 
-//  / -- list of projects
+//  / -- list of blogs
 router.get('/', (req, res) => {
 
-  Project.findAll({
+  blog.findAll({
     include: [
       {model: User}
     ]
   })
-    .then((projects) => {
+    .then((blogs) => {
       res.render('index', {
-        projects: projects.map((project) => project.get({ plain: true })),
+        blogs: blogs.map((blog) => blog.get({ plain: true })),
         logged_in: req.session.logged_in,
       })
     }).catch((err) => {
@@ -25,21 +25,21 @@ router.get('/', (req, res) => {
 });
 
 
-// /project/:id --- show a project
-router.get('/project/:id', (req,res) => {
+// /blog/:id --- show a blog
+router.get('/blog/:id', (req,res) => {
 
-  Project.findByPk(req.params.id, {
+  blog.findByPk(req.params.id, {
     include: [
       {model: User},
     ]
   }).then((data) => {
 
-    const project = data.get({plain: true});
+    const blog = data.get({plain: true});
 
 
-    res.render('project', {
+    res.render('blog', {
       logged_in: req.session.logged_in,
-      project: project,
+      blog: blog,
     })
   })
 })
@@ -113,15 +113,15 @@ router.post('/signup', async (req, res) => {
 })
 
 
-// /profile (protected)-- current user projects & create new project
-// & delete project
+// /profile (protected)-- current user blogs & create new blog
+// & delete blog
 router.use(authenticate);
 router.get('/profile', (req, res) => {
 
   // need the current user
   User.findByPk(req.session.user_id, {
     include: [
-      {model: Project}
+      {model: blog}
     ]
   }).then((userData) => {
     res.render('profile', {
@@ -131,13 +131,13 @@ router.get('/profile', (req, res) => {
 
   })
 
-  // need the current user project
+  // need the current user blog
 
 })
 
 
-router.post('/profile/projects/:id/delete', (req, res) => {
-  Project.destroy({
+router.post('/profile/blogs/:id/delete', (req, res) => {
+  blog.destroy({
     where: {
       id: req.params.id,
     }
