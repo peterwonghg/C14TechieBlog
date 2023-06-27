@@ -3,5 +3,30 @@
     "blog_id": 1,
     "comment_description": "Test comment",
     "user_id": 1
-  }
+  },
+  {
+    "blog_id": 1,
+    "comment_description": "I would like to Test comment",
+    "user_id": 2
+  },
+  {
+    "blog_id": 1,
+    "comment_description": "Me too - Testing",
+    "user_id": 3
+  },
+  {
+    "blog_id": 2,
+    "comment_description": "Test Intro",
+    "user_id": 1
+  },
+  {
+    "blog_id": 2,
+    "comment_description": "Hello",
+    "user_id": 2
+  },
+  {
+    "blog_id": 2,
+    "comment_description": "Hi",
+    "user_id": 3
+  }  
 ]

@@ -2,19 +2,12 @@
 
 <section>
 
-  
-
-  {{#each blogs as |blog|}}
     {{>blog_card 
         name=blog.title
-        id=blog.id
         description=blog.description
 
         user=blog.user.username
     }}
-
-  {{/each}}
-  
 
 
 </section>

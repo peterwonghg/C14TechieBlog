@@ -2,18 +2,18 @@
 
 <section>
 
-  <h1>Welcome! {{user.name}}</h1>
+  <h1>Welcome! {{user.username}}</h1>
 
-  {{#each user.projects as |project|}}
-    {{>project_card 
-        name=project.name
-        id=project.id
-        description=project.description
-        needed_funding=project.needed_funding
-        user=project.user.name
+  {{#each user.blogs as |blog|}}
+    {{>blog_card 
+        name=blog.title
+        id=blog.id
+        description=blog.description
+
+        user=blog.user.username
     }}
 
-    <form action="/profile/projects/{{project.id}}/delete" method="post">
+    <form action="/profile/blogs/{{blog.id}}/delete" method="post">
     
       <button type="submit">Delete</button>
     

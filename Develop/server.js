@@ -11,7 +11,7 @@ const hbs = exphbs.create({
 });
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');

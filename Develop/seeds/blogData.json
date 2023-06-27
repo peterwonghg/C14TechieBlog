@@ -1,6 +1,10 @@
 [
   {
     "title": "Test Blog",
-    "description": "Seed Test"
+    "description": "Test"
+  },
+  {
+    "title": "Introduction",
+    "description": "Introduce yourselves and get to know your fellow bloggers"
   }
 ]
