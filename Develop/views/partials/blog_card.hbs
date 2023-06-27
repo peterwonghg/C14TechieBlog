@@ -2,16 +2,15 @@
   {{!-- title --}}
   <h1>
     {{#if id}}
-      <a href="/project/{{id}}">{{name}}</a>
+      <a href="/blog/{{id}}">{{title}}</a>
     {{else}}
-      {{name}}
+      {{title}}
     {{/if}}
 
     </h1>
   {{!-- desc --}}
   <p>{{description}}</p>
 
-  <p>Funding required: {{needed_funding}}</p>
 
   <p>Created by: {{ user }}</p>
 </div>

@@ -1,5 +1,5 @@
 const authenticate = require('../../middleware/authenticate');
-const { blog, User } = require('../../models');
+const { Blog, User } = require('../../models');
 
 const router = require('express').Router();
 
@@ -8,7 +8,7 @@ const router = require('express').Router();
 //  / -- list of blogs
 router.get('/', (req, res) => {
 
-  blog.findAll({
+  Blog.findAll({
     include: [
       {model: User}
     ]
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 // /blog/:id --- show a blog
 router.get('/blog/:id', (req,res) => {
 
-  blog.findByPk(req.params.id, {
+  Blog.findByPk(req.params.id, {
     include: [
       {model: User},
     ]
