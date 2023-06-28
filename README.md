@@ -67,13 +67,13 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 ## Demo
 
-### READ All Products
+### Home Page
 ![Home Page](/Assets/01.png)
 
-### READ Product By ID
+### Login Page
 ![Login Page](/Assets/02.png)
 
-### CREATE Product
+### Signup Page
 ![Signup Page](/Assets/03.png)
 
 
